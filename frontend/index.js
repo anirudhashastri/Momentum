@@ -90,5 +90,61 @@ function updateTimer() {
 // Initially display the default message
 timerElement.textContent = "Click the button to start the timer.";
 
+// Assistant Feature
+const assistantContainer = document.getElementById("assistant-container");
+const assistantToggle = document.getElementById("assistant-toggle");
+const assistantMessages = document.getElementById("assistant-messages");
+const assistantInput = document.getElementById("assistant-input");
+const assistantSend = document.getElementById("assistant-send");
+
+// Toggle Assistant Visibility
+assistantToggle.addEventListener("click", () => {
+  if (assistantContainer.style.display === "none") {
+    assistantContainer.style.display = "block";
+  } else {
+    assistantContainer.style.display = "none";
+  }
+});
+
+// Handle Assistant Input
+assistantSend.addEventListener("click", async () => {
+  const userMessage = assistantInput.value.trim();
+  if (!userMessage) return;
+
+  // Display user message in the chat
+  addAssistantMessage(userMessage, "user-message");
+
+  // Send the message to the AI API
+  try {
+    const response = await fetch(`${apiBase}/assistant`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: userMessage }),
+    });
+    const data = await response.json();
+
+    // Display assistant response in the chat
+    if (data.response) {
+      addAssistantMessage(data.response, "assistant-response");
+    } else {
+      addAssistantMessage("Sorry, I couldn't process your request.", "assistant-response");
+    }
+  } catch (error) {
+    console.error("Error communicating with assistant:", error);
+    addAssistantMessage("An error occurred while processing your query.", "assistant-response");
+  } finally {
+    assistantInput.value = ""; // Clear input
+  }
+});
+
+// Add message to chat
+function addAssistantMessage(message, className) {
+  const messageDiv = document.createElement("div");
+  messageDiv.className = `assistant-message ${className}`;
+  messageDiv.textContent = message;
+  assistantMessages.appendChild(messageDiv);
+  assistantMessages.scrollTop = assistantMessages.scrollHeight; // Scroll to the latest message
+}
+
 // Initialize
 fetchWebsites();

@@ -36,6 +36,52 @@
       font-size: 18px;
       color: darkred;
     }
+    #assistant-container {
+      display: none;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-top: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+    }
+    #assistant-toggle {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    #assistant-input {
+      width: calc(100% - 80px);
+      padding: 8px;
+      margin-right: 10px;
+    }
+    #assistant-send {
+      padding: 8px 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #assistant-messages {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    .assistant-message {
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 5px;
+    }
+    .user-message {
+      background-color: #f1f1f1;
+      text-align: right;
+    }
+    .assistant-response {
+      background-color: #e8f0fe;
+    }
   </style>
 </head>
 <body>
@@ -58,6 +104,13 @@
   <h2>Critical Path Access</h2>
   <button id="access-critical-path" disabled>Access Extensions Path</button>
   <div class="timer" id="timer"></div>
+  <h2>Conversational Assistant</h2>
+  <button id="assistant-toggle">Toggle Assistant</button>
+  <div id="assistant-container">
+    <div id="assistant-messages"></div>
+    <input type="text" id="assistant-input" placeholder="Ask a question..." />
+    <button id="assistant-send">Send</button>
+  </div>
   <script src="index.js"></script>
 </body>
 </html>

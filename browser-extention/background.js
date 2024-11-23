@@ -1,5 +1,5 @@
 let allowedWebsites = ["http://localhost:5173/"]; // Default allowed websites
-let idleThreshold = 2000; // 2 seconds(for testing purposes) in milliseconds
+let idleThreshold = 20000; // 20 seconds(for testing purposes) in milliseconds
 let lastActivityTime = Date.now();
 let currentTabId = null;
 
@@ -113,4 +113,4 @@ setInterval(() => {
 
 // Fetch allowed websites on startup
 fetchAllowedWebsites();
-setInterval(fetchAllowedWebsites, 3000); // Refresh every 60 seconds
+setInterval(fetchAllowedWebsites, 3000); // Refresh every 3 seconds
