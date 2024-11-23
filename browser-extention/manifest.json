@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Focus Extension",
   "version": "1.0",
-  "description": "Restrict navigation to a set of allowed websites.",
+  "description": "Restrict navigation to allowed websites.",
   "permissions": ["tabs", "notifications"],
   "host_permissions": ["http://127.0.0.1:5000/*"],
   "background": {
@@ -11,5 +11,9 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon.png"
+  },
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
   }
 }
