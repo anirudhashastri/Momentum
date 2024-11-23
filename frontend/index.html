@@ -1,13 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Extension Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f4f4f4;
+      text-align: left;
+    }
+    .delete-btn {
+      color: white;
+      background-color: red;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .delete-btn:hover {
+      background-color: darkred;
+    }
+    .timer {
+      margin-top: 20px;
+      font-size: 18px;
+      color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <h1>Focus Extension Manager</h1>
+  <form id="add-website-form">
+    <label for="website-url">Add Website:</label>
+    <input type="text" id="website-url" placeholder="Enter website URL" required>
+    <button type="submit">Add</button>
+  </form>
+  <h2>Allowed Websites</h2>
+  <table id="websites-table">
+    <thead>
+      <tr>
+        <th>Website</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <h2>Critical Path Access</h2>
+  <button id="access-critical-path" disabled>Access Extensions Path</button>
+  <div class="timer" id="timer"></div>
+  <script src="index.js"></script>
+</body>
 </html>

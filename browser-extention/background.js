@@ -1,4 +1,5 @@
-let allowedWebsites = ["http://localhost:5173/"]; // Default websites
+let allowedWebsites = ["http://localhost:5173/",
+  "chrome://extensions/"]; // Default websites
 
 // Fetch allowed websites from the backend
 async function fetchAllowedWebsites() {
@@ -37,4 +38,4 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 fetchAllowedWebsites();
 
 // Refresh allowed websites every 60 seconds
-setInterval(fetchAllowedWebsites, 60000);
+setInterval(fetchAllowedWebsites, 4000);
