@@ -28,14 +28,44 @@ function resetIdleTimer() {
 
 // Notify content script to display the idle pop-up
 function notifyContentScriptIdle(tabId, idleTime) {
-  chrome.tabs.sendMessage(tabId, { type: "idle-warning", idleTime }, (response) => {
-    if (chrome.runtime.lastError) {
-      console.warn("Could not send message to content script:", chrome.runtime.lastError.message);
+  chrome.tabs.get(tabId, (tab) => {
+    if (tab && tab.url && tab.url.startsWith("http")) {
+      console.log("Tab URL detected:", tab.url); // Debug log
+
+      // Check if the URL is in the allowed list
+      if (isAllowed(tab.url)) {
+        // URL is allowed, send the idle-warning message
+        console.log("URL is allowed. Sending idle warning...");
+        chrome.tabs.sendMessage(tabId, { type: "idle-warning", idleTime }, (response) => {
+          if (chrome.runtime.lastError) {
+            console.warn("Could not send message to content script:", chrome.runtime.lastError.message);
+          } else {
+            console.log("Content script acknowledged idle message:", response);
+          }
+        });
+      } else {
+        // URL is not allowed, redirect to the default website
+        console.warn("URL is not allowed. Redirecting...");
+        if (allowedWebsites.length > 0) {
+          const defaultWebsite = allowedWebsites[0] || "http://localhost:5173/";
+          console.log(`Redirecting to default website: ${defaultWebsite}`);
+          chrome.tabs.update(tabId, { url: defaultWebsite });
+        }
+      }
     } else {
-      console.log("Content script acknowledged idle message:", response);
+      // Invalid or restricted URL
+      console.warn("Invalid tab or restricted URL detected:", tab.url);
+
+      // Redirect to the default allowed website
+      if (allowedWebsites.length > 0) {
+        const defaultWebsite = allowedWebsites[0] || "http://localhost:5173/";
+        console.log(`Redirecting to default website: ${defaultWebsite}`);
+        chrome.tabs.update(tabId, { url: defaultWebsite });
+      }
     }
   });
 }
+
 
 // Monitor active tabs
 chrome.tabs.onActivated.addListener(async (activeInfo) => {
@@ -79,8 +109,8 @@ setInterval(() => {
     notifyContentScriptIdle(currentTabId, Math.floor((Date.now() - lastActivityTime) / 1000));
     resetIdleTimer(); // Reset timer after notification
   }
-}, 10000); // Check every 10 seconds
+}, 2000); // Check every 10 seconds
 
 // Fetch allowed websites on startup
 fetchAllowedWebsites();
-setInterval(fetchAllowedWebsites, 60000); // Refresh every 60 seconds
+setInterval(fetchAllowedWebsites, 3000); // Refresh every 60 seconds
