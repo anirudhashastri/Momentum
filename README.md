@@ -47,8 +47,8 @@ Focus Extension Manager is a tool that:
 
 Before setting up the project, ensure you have the following installed:
 
-1. **Python** (3.8 or later)
-   - Download from [https://www.python.org/](https://www.python.org/).
+1. **Python** (3.10)
+   - Follow the steps below to set up an anaconda environment
 2. **Node.js** (18 or later)
    - Download from [https://nodejs.org/](https://nodejs.org/).
 3. **Google Chrome** (latest version)
@@ -73,13 +73,40 @@ cd Momentum
 
 ### **2. Backend Setup**
 
-#### **Step 2.1: Create a Python Virtual Environment**
-# TODO:  explain using anaconda
+#### **Step 2.1: Create an Anaconda Environment**
+1. Open your terminal or Anaconda Prompt install [Anaconda](https://docs.anaconda.com/anaconda/install/) for your system .
+2. Run the following command to create a new environment:
+
+    ```bash
+    conda create -n momentum python=3.10
+    ```
+
+3. Activate the environment:
+
+    ```bash
+    conda activate momentum
+    ```
+
 
 #### **Step 2.2: Install Required Python Packages**
 ```bash
-pip install flask flask-cors groq-sdk
+pip install flask flask-cors groq dotenv
 ```
+#### **Step 2.3: Section of environment in VS-Code**
+1. Open the folder containing your project files (app.py, etc.).
+
+2. Click on File > Open Folder and select the project directory.
+Ensure you have your app.py or any Python file open in the editor.
+
+3. Open the Command Palette:
+
+Press Ctrl + Shift + P (or Cmd + Shift + P on macOS) to open the command palette.
+Search for Interpreter:
+
+Type 'Python: Select Interpreter' in the command palette and press Enter
+
+4. Following this all your oython environments should be displayed. Selected the .momentum' environment we just created.
+
 
 ---
 
@@ -101,8 +128,21 @@ npm run build
 
 ### **4. Configure Groq API**
 
-#### **Step 4.1: Set Up the API Key**
-# TODO: DO groq api set up
+#### **Step 4.1: Obtain a Groq API Key**
+1. Visit the [Groq API website](https://www.groq.com) and sign up for a developer account.
+2. Generate a free API key from your dashboard under **API Keys**.
+3. Copy this key for use in the next step.
+4. I have also provided a key for ease of useage in the APIKEY.txt
+
+#### **Step 4.2: Add Groq API key in `.env`**
+
+- Add your Groq API key in the following format:
+
+    ```plaintext
+    GROQ_API_KEY=your_api_key_here
+    ```
+
+- For security, ensure `.env` is listed in `.gitignore` (included in this project) to avoid accidentally committing sensitive information.
 
 
 
@@ -197,7 +237,3 @@ If you'd like to contribute:
    - Ensure the extension is loaded in `chrome://extensions`.
 
 ---
-
-## **License**
-
-This project is licensed under the MIT License. See `LICENSE` for details.
