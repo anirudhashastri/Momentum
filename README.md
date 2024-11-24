@@ -169,6 +169,9 @@ npm start
 [![Watch the video](https://github.com/anirudhashastri/Momentum/blob/16711edf998c364ddee568d71fbd54f4297e20cd/images/thumbnail.png)](https://drive.google.com/file/d/1b4uHDlM1KmTcvJ5jrJcjm2ZFxs4ppJno/view?usp=sharing)
 
 ---
+## **High Fidelity Flow Diagram**
+![HighFidelityFlowDiagram1](https://github.com/anirudhashastri/Momentum/blob/e2fcf529d7ccfe9d4dc4a4a457aba6c18ddae271/images/HighFidelity_FlowDiagram.png)
+---
 
 ## **Using the Application**
 
