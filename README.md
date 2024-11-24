@@ -165,7 +165,7 @@ npm start
 
 ---
 ## **Video Demo**
-# TODO: Update the video link and thumb nail
+- Click on the image below to watch a demo video
 [![Watch the video](https://github.com/anirudhashastri/Momentum/blob/16711edf998c364ddee568d71fbd54f4297e20cd/images/thumbnail.png)](https://drive.google.com/file/d/1b4uHDlM1KmTcvJ5jrJcjm2ZFxs4ppJno/view?usp=sharing)
 
 ---
