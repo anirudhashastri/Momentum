@@ -164,6 +164,11 @@ npm start
 - This starts the frontend on `http://localhost:5173`.
 
 ---
+## **Video Demo**
+# TODO: Update the video link and thumb nail
+[![Watch the video](https://github.com/anirudhashastri/BlindSight/blob/f0b11d0b7f1c4581220d066dc7b0afce8633ebfc/images/thumbnail.png)](https://drive.google.com/file/d/1b4uHDlM1KmTcvJ5jrJcjm2ZFxs4ppJno/view?usp=sharing)
+
+---
 
 ## **Using the Application**
 

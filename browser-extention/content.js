@@ -50,9 +50,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     // Append the pop-up to the body
     document.body.appendChild(popup);
   
-    // Automatically remove the pop-up after 10 seconds
+    // Automatically remove the pop-up after 3 seconds
     setTimeout(() => {
       popup.remove();
-    }, 10000);
+    }, 3000);
   }
   
