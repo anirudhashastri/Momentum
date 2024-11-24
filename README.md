@@ -92,7 +92,7 @@ cd Momentum
 ```bash
 pip install flask flask-cors groq dotenv
 ```
-#### **Step 2.3: Section of environment in VS-Code**
+#### **Step 2.3: Selection of environment in VS-Code**
 1. Open the folder containing your project files (app.py, etc.).
 
 2. Click on File > Open Folder and select the project directory.
