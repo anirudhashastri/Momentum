@@ -52,6 +52,7 @@ Before setting up the project, ensure you have the following installed:
    - Follow the steps below to set up an anaconda environment
 2. **Node.js** (18 or later)
    - Download from [https://nodejs.org/](https://nodejs.org/).
+   - Make sure node is added to PATH in the system
 3. **Google Chrome** (latest version)
    - Download from [https://www.google.com/chrome/](https://www.google.com/chrome/).
 4. **Groq API Key**
@@ -114,6 +115,12 @@ Type 'Python: Select Interpreter' in the command palette and press Enter
 ### **3. Frontend Setup**
 
 #### **Step 3.1: Install Node.js Dependencies**
+Check if node is properly installed
+```bash
+node -v
+npm -v
+```
+If either of the commands throws an error first make sure that node has been properly installed. Then try to run these commands both in vs code powershell and cmd. If none of them work check node installation.
 Navigate to the frontend folder:
 ```bash
 cd frontend
