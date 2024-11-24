@@ -14,9 +14,8 @@ A productivity-focused Chrome extension and web application designed to help use
 6. [Running the Application](#running-the-application)
 7. [Using the Application](#using-the-application)
 8. [Folder Structure](#folder-structure)
-9. [Contributing](#contributing)
-10. [Troubleshooting](#troubleshooting)
-11. [License](#license)
+9. [Troubleshooting](#troubleshooting)
+
 
 ---
 
@@ -211,21 +210,12 @@ npm start
 
 ---
 
-## **Contributing**
-
-If you'd like to contribute:
-1. Fork the repository.
-2. Create a new branch for your feature/bug fix.
-3. Submit a pull request with a detailed description.
-
----
-
 ## **Troubleshooting**
 
 ### **Common Issues**
 
 1. **Flask Server Not Starting**:
-   - Ensure all dependencies are installed with `pip install -r requirements.txt`.
+   - Ensure all dependencies are installed as mentioned above.
 
 2. **Frontend Not Loading**:
    - Verify the backend is running on `http://127.0.0.1:5000`.
