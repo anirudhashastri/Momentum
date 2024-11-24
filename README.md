@@ -12,9 +12,11 @@ A productivity-focused Chrome extension and web application designed to help use
 4. [Installation](#installation)
 5. [Configuration](#configuration)
 6. [Running the Application](#running-the-application)
-7. [Using the Application](#using-the-application)
-8. [Folder Structure](#folder-structure)
-9. [Troubleshooting](#troubleshooting)
+7. [Video Demo](#Video-Demo)
+8. [High Fidelity Flow Diagram](#High-Fidelity-Flow-Diagram)
+9. [Using the Application](#using-the-application)
+10. [Folder Structure](#folder-structure)
+11. [Troubleshooting](#troubleshooting)
 
 
 ---
