@@ -166,7 +166,7 @@ npm start
 ---
 ## **Video Demo**
 # TODO: Update the video link and thumb nail
-[![Watch the video](https://github.com/anirudhashastri/BlindSight/blob/f0b11d0b7f1c4581220d066dc7b0afce8633ebfc/images/thumbnail.png)](https://drive.google.com/file/d/1b4uHDlM1KmTcvJ5jrJcjm2ZFxs4ppJno/view?usp=sharing)
+[![Watch the video](https://github.com/anirudhashastri/Momentum/blob/16711edf998c364ddee568d71fbd54f4297e20cd/images/thumbnail.png)](https://drive.google.com/file/d/1b4uHDlM1KmTcvJ5jrJcjm2ZFxs4ppJno/view?usp=sharing)
 
 ---
 
