@@ -91,7 +91,7 @@ cd Momentum
 
 #### **Step 2.2: Install Required Python Packages**
 ```bash
-pip install flask flask-cors groq dotenv
+pip install flask flask-cors groq python-dotenv
 ```
 #### **Step 2.3: Selection of environment in VS-Code**
 1. Open the folder containing your project files (app.py, etc.).
@@ -172,7 +172,7 @@ npm start
 
 ---
 ## **High Fidelity Flow Diagram**
-![HighFidelityFlowDiagram1](https://github.com/anirudhashastri/Momentum/blob/e2fcf529d7ccfe9d4dc4a4a457aba6c18ddae271/images/HighFidelity_FlowDiagram.png)
+![HighFidelityFlowDiagram1](https://github.com/anirudhashastri/Momentum/blob/3e228d08cfb4f5397e6cc642ec434fe9789bac0e/images/HighFidelity_FlowDiagram.png)
 ---
 
 ## **Using the Application**
